@@ -61,9 +61,16 @@ For example:
 download;1vjkwFQJXMpVps5Zd2yD54syoXMEw98Fb;C:\Users\Administrator\Downloads\test.png
 ```
 6. Example C2 Usage
-Start the C2 server: Run the c2-server.py script on your attacker machine.
-Run the payload: Drop and execute the compiled payload on the victim's machine.
-Command execution: After the reverse shell is established, issue commands such as file upload, download, or OS command execution.
+   
+  1/ Start the C2 server: Run the c2-server.py script on your attacker machine.
+  
+  2/ Run the payload: Drop and execute the compiled payload on the victim's machine.
+  
+  3/ Command execution: After the reverse shell is established, issue commands such as file upload, download, or OS command execution.
+<p align="center">
+  <img alt="Logo" src="img/c2script.png" height="100%" width="100%">
+</p>
+
 Dependencies
 The Rust project uses the following dependencies:
 - yup-oauth2
@@ -77,6 +84,13 @@ Make sure to install these by running:
 ```
 cargo build
 ```
+## Inspiration & Acknowledgments 🙌
+This project was inspired by the amazing article "[Hacking Tutorial: Google Sheets Command and Control (C2) Server](https://maxlikessecurity.medium.com/hacking-tutorial-google-sheets-command-and-control-c2-server-999e4dbc89fc)" by Max Likes Security.
+
+Max's work provided the foundation and sparked my interest in building my own version of a Google Drive C2 system. His creativity and insights into using Google services for C2 operations were a huge source of inspiration. 🎉
+
+If you're interested in exploring more about creative Command and Control systems, I highly recommend checking out Max's article!
+
 # License
 This project is licensed under the Apache License 2.0. See the [LICENSE](https://github.com/apache/.github/blob/main/LICENSE) for details.
 
