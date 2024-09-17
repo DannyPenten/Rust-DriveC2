@@ -29,7 +29,7 @@ This will generate an .exe file in the target/x86_64-pc-windows-gnu/release fold
 3. Running the C2 Server
 On your attacker machine (C2 server), you will run the following Python script to listen for incoming connections and send commands:
 ```
-python3 c2-server.py
+python3 C2_DriveAPI.py
 ```
 4. Reverse Shell on Victim's Machine
 After compiling, transfer the compiled .exe payload to the victim's machine and execute it.
