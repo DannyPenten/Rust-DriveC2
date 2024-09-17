@@ -56,6 +56,9 @@ cd payload
 # Build for a Windows target
 cargo build --target x86_64-pc-windows-gnu --release
 ```
+<p align="center">
+  <img alt="Logo" src="img/cargo-build.jpg" height="100%" width="100%">
+</p>
 This will generate an .exe file in the target/x86_64-pc-windows-gnu/release folder.
 
 3. Running the C2 Server
